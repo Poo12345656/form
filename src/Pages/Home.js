@@ -18,14 +18,13 @@ function Home() {
   const {
     register, // register the form field for manage events and validations.
     handleSubmit,
-    formState: { errors = {}, isValid, dirtyFields, isDirty }, // we got all the errors on errors key
-    watch
-
+    formState: { errors = {},dirtyFields, isDirty }, // we got all the errors on errors key
+    watch,
   } = useForm();
   //get current password value
   const password = useRef({});
   //console.log({ isValid, dirtyFields, isDirty })
-  password.current = watch("password", "");//get value password
+  password.current = watch("password", ""); //get value password
   //console.log("password:" + password.current);
 
   const country = [
@@ -33,7 +32,6 @@ function Home() {
     { key: "India", value: "In" },
     { key: "pakistan", value: "pk" },
     { key: "USA", value: "us" },
-    hello
   ];
   const hobbyOptions = [
     { optionLabel: "Reading Book", value: "Reading Book" },
@@ -45,7 +43,7 @@ function Home() {
     { option: "Male", value: "Male" },
     { option: "FeMale", value: "Female" },
   ];
-  const isdisable = !(isDirty && Object.keys(dirtyFields).length === 6)//create constant for disable submit button
+  const isdisable = !(isDirty && Object.keys(dirtyFields).length === 6); //create constant for disable submit button
   console.log(errors.email, "errors");
   return (
     <div className="container">
@@ -63,7 +61,11 @@ function Home() {
                   {...register("fullName", { required: true })}
                 />
                 {errors.fullName && (
-                  <Text text="Error : First name is required." as="span" color="red" />
+                  <Text
+                    text="Error : First name is required."
+                    as="span"
+                    color="red"
+                  />
                 )}
               </FormGroup>
               <FormGroup>
@@ -75,7 +77,11 @@ function Home() {
                   {...register("lastName", { required: true })}
                 />
                 {errors.lastName && (
-                  <Text text="Error : last name is required." as="span" color="red" />
+                  <Text
+                    text="Error : last name is required."
+                    as="span"
+                    color="red"
+                  />
                 )}
               </FormGroup>
             </div>
@@ -92,7 +98,11 @@ function Home() {
                   })}
                 />
                 {errors.email && (
-                  <Text text="Error : Email address is required." as="span" color="red" />
+                  <Text
+                    text="Error : Email address is required."
+                    as="span"
+                    color="red"
+                  />
                 )}
               </FormGroup>
             </div>
@@ -108,18 +118,35 @@ function Home() {
                   {...register("password", { required: true })}
                 />
                 {errors.password && (
-                  <Text text="Error : Password is required." as="span" color="red" />
+                  <Text
+                    text="Error : Password is required."
+                    as="span"
+                    color="red"
+                  />
                 )}
               </FormGroup>
             </div>
             <div>
               <FormGroup>
-                <Text text="Confirm Password*" name="password_repeat" as="label" />
-                <InputText type="password" {...register("password_repeat", { validate: value => value === password.current })} />
+                <Text
+                  text="Confirm Password*"
+                  name="password_repeat"
+                  placeholder="Enter the Confirm Password"
+                  as="label"
+                />
+                <InputText
+                  type="password"
+                  {...register("password_repeat", {
+                    validate: (value) => value === password.current,
+                  })}
+                />
                 {errors.password_repeat && (
-                  <Text text="Error : password does not match." as="span" color="red" />
+                  <Text
+                    text="Error : password does not match."
+                    as="span"
+                    color="red"
+                  />
                 )}
-
               </FormGroup>
             </div>
 
@@ -131,11 +158,14 @@ function Home() {
                   label="Address"
                   placeholder="Enter Address value"
                   isError={errors.address}
-
                   {...register("address", { required: true })}
                 />
                 {errors.address && (
-                  <Text text="Error : address is required." as="span" color="red" />
+                  <Text
+                    text="Error : address is required."
+                    as="span"
+                    color="red"
+                  />
                 )}
               </FormGroup>
             </div>
@@ -161,8 +191,6 @@ function Home() {
                 <RadioButton name="Gender" options={genderOptions} />
               </div>
             </div>
-
-
 
             <div className="buttonWrapper">
               <Button
