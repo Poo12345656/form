@@ -1,0 +1,15 @@
+.inputWrapper{
+    
+    width: 80%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    }
+.error{
+
+    border:1px solid red;
+}
+     
+
+  

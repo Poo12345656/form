@@ -1,0 +1,25 @@
+.container{
+    max-width:1280px;
+    margin:0 auto;
+
+}
+.header-section {
+    margin:20px 20px;
+
+}
+.homeWrapper{
+    margin-top: 20px;
+}
+
+.hobbyWrapper{
+    margin:20px 0;
+}
+.checkbox{
+    margin-top:10px;
+}
+.radioButton{
+    margin-top:10px;
+}
+.buttonWrapper{
+    margin-top:20px;
+}

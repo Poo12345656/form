@@ -1,0 +1,17 @@
+/* buttonWrapper{
+
+}
+.red
+{
+    color:red;
+} */
+.contained{
+    background-color: blue;
+    color: white;
+    border:none;
+    padding:15px 30px;
+}
+.disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
+}
