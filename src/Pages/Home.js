@@ -18,7 +18,7 @@ function Home() {
   const {
     register, // register the form field for manage events and validations.
     handleSubmit,
-    formState: { errors = {},dirtyFields, isDirty }, // we got all the errors on errors key
+    formState: { errors = {}, dirtyFields, isDirty }, // we got all the errors on errors key
     watch,
   } = useForm();
   //get current password value
@@ -173,7 +173,9 @@ function Home() {
             <div>
               <FormGroup>
                 <Text text="Select Country*" as="label" />
-                <Select type="select" options={country} />
+
+                <Select type="select" options={country} isError={errors.country}
+                  {...register("country", { required: true })} />
               </FormGroup>
             </div>
             <FormGroup>
