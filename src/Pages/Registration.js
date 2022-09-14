@@ -9,6 +9,7 @@ import CheckBox from "../Component/Shared/FormGroup/CheckBox/CheckBox";
 import RadioButton from "../Component/Shared/FormGroup/RadioButton/RadioButton";
 import InputText from "../Component/Shared/FormGroup/InputText/InputText";
 import Select from "../Component/Shared/FormGroup/Select/Select";
+import "./Registration.css"
 
 function Registration() {
   function conPass(allField, con_pass_val) {
@@ -96,7 +97,6 @@ function Registration() {
     { option: "Male", value: "Male" },
     { option: "FeMale", value: "Female" },
     { option: "other", value: "" },
-
   ];
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -105,13 +105,11 @@ function Registration() {
       console.log("submit");
       reSetForm();
     }
-
-
   };
   const { firstName, lastName, email, password, con_password, selectCountry,  address } = formFileds;
-
   return (
-    <div>
+    <div className="container" >
+      <div class="header-section">
       <Layout>
         <Text text="Registration Form" size="lg" as="h1" />
         <form onSubmit={handleOnSubmit}>
@@ -254,6 +252,10 @@ function Registration() {
 
         </form>
       </Layout>
+      </div>
+
+
+      
     </div>
   );
 }
