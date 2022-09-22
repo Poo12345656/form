@@ -69,10 +69,10 @@ function Home() {
                 )}
               </FormGroup>
               <FormGroup>
-                <Text text="Last Name*" as="label" />
+                <Text text="Last Name*" as="label" />/
                 <InputText
                   type="text"
-                  placeholder="Enter your Name"
+                  placeholder="Enter your Last Name"
                   isError={errors.lastName}
                   {...register("lastName", { required: true })}
                 />
